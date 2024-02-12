@@ -43,3 +43,7 @@ go run main.go
 5. Push your changes to your fork.
 
 6. Submit a pull request to the main repository.
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
