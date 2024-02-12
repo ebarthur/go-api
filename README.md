@@ -30,7 +30,7 @@ go run main.go
 
 ## Dependencies
 
-- Run `go mod tidy` to run the install dependencies called in the program
+- Run `go mod tidy` to install the dependencies called in the program
 
 ## Contributing
 
