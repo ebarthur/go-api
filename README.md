@@ -10,17 +10,17 @@ To start the API, follow these steps:
 
 2. Clone this repository to your local machine.
 
-```bash
-git clone github.com/ebarthur/goapi.git
-```
+   ```bash
+   git clone github.com/ebarthur/goapi.git
+   ```
 
 3. Navigate to the `cmd/api` directory in your terminal.
 
 4. Run the following command to start the API:
 
-```bash
-go run main.go
-```
+   ```bash
+   go run main.go
+   ```
 
 5. Once the API is running, you can access it at `http://localhost:8000`.
 
