@@ -5,15 +5,15 @@ import (
 	"fmt"
 	"net/http"
 
+	log "github.com/sirupsen/logrus"
 	"goapi/api"
 	"goapi/internal/tools"
-	log "github.com/sirupsen/logrus"
 )
 
 var UnAuthorizedError = errors.New(fmt.Sprintf("Invalid username or token."))
 
 func Authorization(next http.Handler) http.Handler {
-	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {	
+	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 
 		var username string = r.URL.Query().Get("username")
 		var token = r.Header.Get("Authorization")
@@ -34,7 +34,7 @@ func Authorization(next http.Handler) http.Handler {
 		var loginDetails *tools.LoginDetails
 		loginDetails = (*database).GetUserLoginDetails(username)
 
-		if (loginDetails == nil || (token != (*loginDetails).AuthToken)) {
+		if loginDetails == nil || (token != (*loginDetails).AuthToken) {
 			log.Error(UnAuthorizedError)
 			api.RequestErrorHandler(w, UnAuthorizedError)
 			return

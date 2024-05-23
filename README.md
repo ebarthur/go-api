@@ -24,9 +24,15 @@ To start the API, follow these steps:
 
 5. Once the API is running, you can access it at `http://localhost:8000`.
 
+6. There is a middleware to get user coins. Find `internal/tools/mockdb.go` to get mock data.
+
+7.  Attach username as a query param. eg: `http://localhost:8000/account/coins/?username=jason`
+
+8. Add the AuthToken from the mock data to `Authorization` in your request header and make your get request.
+
 ## API Endpoints
 
-- `GET /`: Returns user coin balance
+- `GET /account/coins`: Returns user coin balance
 
 ## Dependencies
 

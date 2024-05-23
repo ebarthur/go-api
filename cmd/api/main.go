@@ -1,15 +1,15 @@
 package main
 
-import(
+import (
 	"fmt"
 	"net/http"
 
 	"github.com/go-chi/chi"
-	"goapi/internal/handlers"
 	log "github.com/sirupsen/logrus"
+	"goapi/internal/handlers"
 )
 
-func main(){
+func main() {
 
 	log.SetReportCaller(true)
 	var r *chi.Mux = chi.NewRouter()
@@ -22,8 +22,8 @@ func main(){
 \ \ \__ \  \ \ \/\ \     \ \  __ \  \ \  _-/ \ \ \  
  \ \_____\  \ \_____\     \ \_\ \_\  \ \_\    \ \_\ 
   \/_____/   \/_____/      \/_/\/_/   \/_/     \/_/ `)
-  err := http.ListenAndServe("localhost:8000", r)
-  if err != nil {
-	  log.Error(err)
-  }
+	err := http.ListenAndServe("localhost:8000", r)
+	if err != nil {
+		log.Error(err)
+	}
 }
