@@ -30,6 +30,10 @@ To start the API, follow these steps:
 
 8. Add the AuthToken from the mock data to `Authorization` in your request header and make your get request.
 
+9. Here is a link to the [Postman Documentation](https://www.postman.com/ebarthur/workspace/go-game-coin-api/request/34350550-e1395764-2ecc-4744-ba59-1f5cd45fe326?action=share&source=copy-link&creator=34350550&ctx=documentation)
+
+10. Make sure the API server is on and running on your local machine else this will not work.
+
 ## API Endpoints
 
 - `GET /account/coins`: Returns user coin balance
