@@ -1,6 +1,6 @@
 # Go API
 
-This is a simple API built using Go.
+This is a simple API built using Go. It provides functionality to retrieve user login details and coin balance.
 
 ## Getting Started
 
@@ -36,11 +36,27 @@ To start the API, follow these steps:
 
 ## API Endpoints
 
-- `GET /account/coins`: Returns user coin balance
+- `GET /account/coins`: Returns user coin balance. The response will be in the format:
+
+  ```json
+  {
+    "Code": 200,
+    "Balance": 100
+  }
+  ```
+
+  In case of an error, the response will be:
+
+  ```json
+  {
+    "Code": 400,
+    "Message": "Error message"
+  }
+  ```
 
 ## Dependencies
 
-- Run `go mod tidy` to install the dependencies called in the program
+- Run `go mod tidy` to install the dependencies called in the program.
 
 ## Contributing
 
@@ -55,3 +71,15 @@ To start the API, follow these steps:
 5. Push your changes to your fork.
 
 6. Submit a pull request to the main repository.
+
+## Code Structure
+
+The codebase is structured as follows:
+
+- `internal/tools/database.go`: Contains the interface for the database and the function to initialize it.
+- `internal/tools/mockdb.go`: Contains a mock database implementation for testing.
+- `api/api.go`: Contains the API handlers and error handling functions.
+- `cmd/api/main.go`: Contains the main function to start the API server.
+- `internal/handlers/api.go`: Contains the API handlers for the different endpoints.
+- `internal/handlers/get_coin_balance.go`: Contains the function to get the user's coin balance.
+- `internal/middlware/authorization.go`: Contains the middleware to check the user's authorization token.
