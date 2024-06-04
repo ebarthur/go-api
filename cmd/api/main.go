@@ -22,6 +22,7 @@ func main() {
 \ \ \__ \  \ \ \/\ \     \ \  __ \  \ \  _-/ \ \ \  
  \ \_____\  \ \_____\     \ \_\ \_\  \ \_\    \ \_\ 
   \/_____/   \/_____/      \/_/\/_/   \/_/     \/_/ `)
+	fmt.Println("\nService is running on http://localhost:8000")
 	err := http.ListenAndServe("localhost:8000", r)
 	if err != nil {
 		log.Error(err)
